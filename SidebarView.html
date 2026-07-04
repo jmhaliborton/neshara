@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><base target="_top"><?!= HtmlService.createHtmlOutputFromFile('styles').getContent(); ?></head><body>
+<!DOCTYPE html><html><head><base target="_top"><?!= include('styles'); ?></head><body>
 <div class='header'>📿 Neshara Studio</div>
 <div class='menu'>
 <button onclick="cargar('Dashboard')">🏠 Dashboard</button>
@@ -9,5 +9,5 @@
 <button onclick="cargar('Locales')">🏪 Locales</button>
 </div>
 <div id='contenido'></div>
-<?!= HtmlService.createHtmlOutputFromFile('scripts').getContent(); ?>
+<?!= include('scripts'); ?>
 </body></html>
