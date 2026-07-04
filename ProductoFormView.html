@@ -1,0 +1,42 @@
+<div class="formulario">
+
+    <h2>Nuevo Producto</h2>
+
+    <label>Nombre</label>
+    <input id="nombre">
+
+    <label>Categoría</label>
+    <select id="categoria">
+        <option>Pulseras</option>
+        <option>Pulseras con dijes</option>
+        <option>Pulseras con piedras</option>
+        <option>Collares</option>
+        <option>Tobilleras</option>
+        <option>Choker</option>
+        <option>Aros</option>
+    </select>
+
+    <label>Colección</label>
+    <input id="coleccion">
+
+    <label>Estado</label>
+    <select id="estado">
+        <option>Disponible</option>
+        <option>Reservado</option>
+        <option>Vendido</option>
+    </select>
+
+    <label>Tiempo (horas)</label>
+    <input id="tiempo" type="number" step="0.25">
+
+    <br><br>
+
+    <button onclick="guardarProducto()">
+        💾 Guardar
+    </button>
+
+    <button onclick="abrirProductos()">
+        ← Cancelar
+    </button>
+
+</div>

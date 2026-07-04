@@ -10,3 +10,23 @@ crear(datos){
  return codigo;
 }
 };
+
+function guardarProducto(datos){
+
+  const sh = hoja(CONFIG.SHEETS.PRODUCTOS);
+
+  const codigo = generarCodigo("PR");
+
+  sh.appendRow([
+    codigo,
+    datos.nombre,
+    datos.categoria,
+    datos.coleccion,
+    datos.estado,
+    datos.tiempo,
+    new Date()
+  ]);
+
+  return true;
+
+}

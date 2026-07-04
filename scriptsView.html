@@ -184,4 +184,43 @@ window.onload = function(){
 
 };
 
+
+function nuevoProducto(){
+
+    google.script.run
+      .withSuccessHandler(function(html){
+
+          document.getElementById("contenido").innerHTML = html;
+
+      })
+      .obtenerVistaProductoForm();
+
+}
+function guardarProducto(){
+
+    const datos = {
+
+        nombre: document.getElementById("nombre").value,
+
+        categoria: document.getElementById("categoria").value,
+
+        coleccion: document.getElementById("coleccion").value,
+
+        estado: document.getElementById("estado").value,
+
+        tiempo: Number(document.getElementById("tiempo").value)
+
+    };
+
+    google.script.run
+        .withSuccessHandler(function(){
+
+            alert("Producto guardado correctamente.");
+
+            abrirProductos();
+
+        })
+        .guardarProducto(datos);
+
+}
 </script>

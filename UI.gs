@@ -90,3 +90,9 @@ function obtenerVistaLocales(){
   return vista("LocalesView");
 
 }
+
+function obtenerVistaProductoForm(){
+
+  return vista("ProductoFormView");
+
+}
