@@ -1,0 +1,2 @@
+function onOpen(){SpreadsheetApp.getUi().createMenu('📿 Neshara Studio').addItem('🚀 Abrir','abrirSidebar').addToUi();}
+function abrirSidebar(){SpreadsheetApp.getUi().showSidebar(HtmlService.createHtmlOutput('<h2>Neshara Studio</h2><p>Entrega 1 instalada.</p>').setTitle('Neshara Studio'));}

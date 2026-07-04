@@ -1,0 +1,1 @@
+const CONFIG={SHEETS:{PRODUCTOS:'Productos',MATERIALES:'Materiales',RECETAS:'Recetas',VENTAS:'Ventas',LOCALES:'Locales',CONFIG:'Configuracion',DASHBOARD:'Dashboard'}};

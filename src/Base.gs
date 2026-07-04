@@ -1,0 +1,1 @@
+const Base={primeraFilaLibre(sheet,col=1,inicio=2){const v=sheet.getRange(inicio,col,sheet.getMaxRows()-inicio+1,1).getValues();for(let i=0;i<v.length;i++){if(v[i][0]==='')return inicio+i;}return sheet.getLastRow()+1;}};

@@ -1,1 +1,3 @@
-# neshara
+# Neshara Studio
+
+Entrega 1.

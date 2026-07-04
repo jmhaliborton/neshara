@@ -1,0 +1,13 @@
+<!DOCTYPE html><html><head><base target="_top"><?!= HtmlService.createHtmlOutputFromFile('styles').getContent(); ?></head><body>
+<div class='header'>📿 Neshara Studio</div>
+<div class='menu'>
+<button onclick="cargar('Dashboard')">🏠 Dashboard</button>
+<button onclick="cargar('Productos')">📿 Productos</button>
+<button onclick="cargar('Materiales')">🧵 Materiales</button>
+<button onclick="cargar('Recetas')">🧾 Recetas</button>
+<button onclick="cargar('Ventas')">💰 Ventas</button>
+<button onclick="cargar('Locales')">🏪 Locales</button>
+</div>
+<div id='contenido'></div>
+<?!= HtmlService.createHtmlOutputFromFile('scripts').getContent(); ?>
+</body></html>
