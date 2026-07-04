@@ -1,18 +1,187 @@
 <script>
+
+/* ===========================
+   Navegación
+=========================== */
+
+function abrirDashboard(){
+
+  google.script.run
+    .withSuccessHandler(function(html){
+
+      document.getElementById("contenido").innerHTML = html;
+
+    })
+    .obtenerVistaDashboard();
+
+}
+
+function abrirProductos(){
+
+  google.script.run
+    .withSuccessHandler(function(html){
+
+      document.getElementById("contenido").innerHTML = html;
+
+      cargarProductos();
+
+    })
+    .obtenerVistaProductos();
+
+}
+
+function abrirMateriales(){
+
+  google.script.run
+    .withSuccessHandler(function(html){
+
+      document.getElementById("contenido").innerHTML = html;
+
+      cargarMateriales();
+
+    })
+    .obtenerVistaProductos();
+
+}
+
+function abrirRecetas(){
+
+  google.script.run
+    .withSuccessHandler(function(html){
+
+      document.getElementById("contenido").innerHTML = html;
+
+    })
+    .obtenerVistaRecetas();
+
+}
+
+function abrirVentas(){
+
+  google.script.run
+    .withSuccessHandler(function(html){
+
+      document.getElementById("contenido").innerHTML = html;
+
+    })
+    .obtenerVistaVentas();
+
+}
+
+function abrirLocales(){
+
+  google.script.run
+    .withSuccessHandler(function(html){
+
+      document.getElementById("contenido").innerHTML = html;
+
+    })
+    .obtenerVistaLocales();
+
+}
+
+
+/* ===========================
+   Productos
+=========================== */
+
 function cargarProductos(){
-google.script.run.withSuccessHandler(function(r){
-const tb=document.querySelector('#tabla tbody');tb.innerHTML='';
-r.forEach(x=>tb.innerHTML+=`<tr><td>${x[0]}</td><td>${x[1]}</td><td>${x[2]}</td><td>${x[3]}</td><td>${x[4]}</td></tr>`);
-}).obtenerProductos();
+
+  google.script.run
+    .withSuccessHandler(function(r){
+
+      const tb = document.querySelector("#tabla tbody");
+
+      if(!tb){
+        console.error("No existe #tabla tbody");
+        return;
+      }
+
+      tb.innerHTML = "";
+
+      r.forEach(function(x){
+
+        tb.innerHTML += `
+          <tr>
+            <td>${x[0]}</td>
+            <td>${x[1]}</td>
+            <td>${x[2]}</td>
+            <td>${x[3]}</td>
+            <td>${x[4]}</td>
+          </tr>
+        `;
+
+      });
+
+    })
+    .obtenerProductos();
+
 }
-function cargarMateriales(){
-google.script.run.withSuccessHandler(function(r){
-const tb=document.querySelector('#tablaMateriales tbody');tb.innerHTML='';
-r.forEach(x=>tb.innerHTML+=`<tr><td>${x[0]}</td><td>${x[1]}</td><td>${x[2]}</td><td>${x[3]}</td><td>${x[4]}</td></tr>`);
-}).obtenerMateriales();
-}
+
 function filtrarProductos(){
-const t=document.getElementById('buscar').value.toLowerCase();
-document.querySelectorAll('#tabla tbody tr').forEach(r=>r.style.display=r.innerText.toLowerCase().includes(t)?'':'none');
+
+  const texto =
+    document.getElementById("buscar").value.toLowerCase();
+
+  document.querySelectorAll("#tabla tbody tr")
+    .forEach(function(fila){
+
+      fila.style.display =
+        fila.innerText.toLowerCase().includes(texto)
+          ? ""
+          : "none";
+
+    });
+
 }
+
+
+/* ===========================
+   Materiales
+=========================== */
+
+function cargarMateriales(){
+
+  google.script.run
+    .withSuccessHandler(function(r){
+
+      const tb = document.querySelector("#tablaMateriales tbody");
+
+      if(!tb){
+        console.error("No existe #tablaMateriales tbody");
+        return;
+      }
+
+      tb.innerHTML = "";
+
+      r.forEach(function(x){
+
+        tb.innerHTML += `
+          <tr>
+            <td>${x[0]}</td>
+            <td>${x[1]}</td>
+            <td>${x[2]}</td>
+            <td>${x[3]}</td>
+            <td>${x[4]}</td>
+          </tr>
+        `;
+
+      });
+
+    })
+    .obtenerMateriales();
+
+}
+
+
+/* ===========================
+   Inicio
+=========================== */
+
+window.onload = function(){
+
+  obtenerDashboard();
+
+};
+
 </script>

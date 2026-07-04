@@ -1,13 +1,13 @@
-<!DOCTYPE html><html><head><base target="_top"><?!= include('styles'); ?></head><body>
+<!DOCTYPE html><html><head><base target="_top"><?!= include('stylesView'); ?></head><body>
 <div class='header'>📿 Neshara Studio</div>
 <div class='menu'>
-<button onclick="cargar('Dashboard')">🏠 Dashboard</button>
-<button onclick="cargar('Productos')">📿 Productos</button>
-<button onclick="cargar('Materiales')">🧵 Materiales</button>
-<button onclick="cargar('Recetas')">🧾 Recetas</button>
-<button onclick="cargar('Ventas')">💰 Ventas</button>
-<button onclick="cargar('Locales')">🏪 Locales</button>
+<button onclick="abrirDashboard()">🏠 Dashboard</button>
+<button onclick="abrirProductos()">📿 Productos</button>
+<button onclick="abrirMateriales()">🧵 Materiales</button>
+<button onclick="abrirRecetas()">🧾 Recetas</button>
+<button onclick="abrirVentas()">💰 Ventas</button>
+<button onclick="abrirLocales()">🏪 Locales</button>
 </div>
 <div id='contenido'></div>
-<?!= include('scripts'); ?>
+<?!= include('scriptsView'); ?>
 </body></html>
